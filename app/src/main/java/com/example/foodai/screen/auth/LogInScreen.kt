@@ -1,5 +1,4 @@
-package com.example.foodai.screen
-
+package com.example.foodai.screen.auth
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -18,9 +17,12 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
+
 
 @Composable
-fun SignupScreen() {
+fun LoginScreen(navController: NavController) {
 
     var email by remember { mutableStateOf("") }
     var username by remember { mutableStateOf("") }
@@ -35,36 +37,33 @@ fun SignupScreen() {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
+        // Simple News Icon Placeholder
+        Surface(
+            modifier = Modifier.size(60.dp),
+            color = Color(0xFFE8F0FE),
+            shape = RoundedCornerShape(12.dp)
+        ) {
+            Box(contentAlignment = Alignment.Center) {
+                Text("📰", fontSize = 30.sp)
+            }
+        }
+
+        Spacer(modifier = Modifier.height(24.dp))
+
         Text(
-            text = "Create Account",
+            text = "Welcome Back",
             fontSize = 28.sp,
             fontWeight = FontWeight.Bold,
-            color = Color(0xFF1A73E8)
-        )
-        Text(
-            text = "Join our news community today",
-            fontSize = 14.sp,
-            color = Color.Gray
+            color = Color(0xFF202124)
         )
 
         Spacer(modifier = Modifier.height(32.dp))
-
-        // Username Field
-        OutlinedTextField(
-            value = "",
-            onValueChange = {},
-            label = { Text("Username") },
-            modifier = Modifier.fillMaxWidth(),
-            shape = RoundedCornerShape(12.dp)
-        )
-
-        Spacer(modifier = Modifier.height(16.dp))
 
         // Email Field
         OutlinedTextField(
             value = "",
             onValueChange = {},
-            label = { Text("Email Address") },
+            label = { Text("Email") },
             modifier = Modifier.fillMaxWidth(),
             shape = RoundedCornerShape(12.dp)
         )
@@ -91,22 +90,30 @@ fun SignupScreen() {
             }
         )
 
+        Spacer(modifier = Modifier.height(12.dp))
+
+        Text(
+            text = "Forgot Password?",
+            modifier = Modifier.align(Alignment.End),
+            color = Color(0xFF1A73E8),
+            fontSize = 14.sp
+        )
+
         Spacer(modifier = Modifier.height(32.dp))
 
         Button(
-            onClick = { /* Handle Signup */ },
+            onClick = { /* Handle Login */ },
             modifier = Modifier.fillMaxWidth().height(54.dp),
             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF1A73E8)),
             shape = RoundedCornerShape(12.dp)
         ) {
-            Text("Sign Up", fontSize = 16.sp, fontWeight = FontWeight.Bold)
+            Text("Login", fontSize = 16.sp, fontWeight = FontWeight.Bold)
         }
     }
 }
 
 @Preview
 @Composable
-fun previewSignUp(){
-    SignupScreen()
-
+fun previewLogin(){
+    LoginScreen(navController = rememberNavController())
 }
