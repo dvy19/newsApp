@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "889591659058",
+    "project_id": "newsblogapp-63657",
+    "storage_bucket": "newsblogapp-63657.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:889591659058:android:14a962b8cf3cef9d47da2b",
+        "android_client_info": {
+          "package_name": "com.example.foodai"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDw0xu_-xXegljQRbzzD89O5FQJWbX3wjc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

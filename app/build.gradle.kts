@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.google.gms.google.services)
 }
 
 android {
@@ -76,6 +77,7 @@ dependencies {
 
     /* ---------------- COROUTINES ---------------- */
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1")
+    implementation(libs.firebase.auth)
 
     /* ---------------- TESTING ---------------- */
     testImplementation("junit:junit:4.13.2")
@@ -90,5 +92,5 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
     implementation("androidx.navigation:navigation-compose:2.7.7")
-    
+
 }
